@@ -1,0 +1,74 @@
+import React, { useContext } from "react";
+import { CartContext } from "../content/CartContext";
+
+const Menu = () => {
+  const { addToCart } = useContext(CartContext);
+
+  const items = [
+    {
+      name: "Classic Burger",
+      desc: "Beef patty, cheddar cheese, house sauce",
+      price: 8.99,
+      img: "/assets/burger.webp"
+    },
+    {
+      name: "Cheese Fries",
+      desc: "Crispy fries topped with cheddar & jalapeño",
+      price: 4.99,
+      img: "/assets/fries.jpg"
+    },
+    {
+      name: "Buffalo Wings",
+      desc: "6pc wings served with ranch & celery",
+      price: 7.49,
+      img: "/assets/wings.jpg"
+    },
+    {
+      name: "Chicken Sandwich",
+      desc: "Crispy buttermilk chicken, lettuce, tomato",
+      price: 9.49,
+      img: "/assets/chicken-sandwich.webp"
+    },
+    {
+      name: "Vanilla Shake",
+      desc: "Thick & creamy vanilla ice cream blend",
+      price: 5.99,
+      img: "/assets/shake.jpg"
+    },
+    {
+      name: "Garden Salad",
+      desc: "Fresh greens, tomato, cucumber, vinaigrette",
+      price: 6.99,
+      img: "/assets/salad.jpg"
+    },
+  ];
+
+  return (
+    <div className="menu-page container">
+      <h2 className="menu-title">Menu</h2>
+      <p className="menu-subtext">
+        Pick your favorite — all made fresh to order.
+      </p>
+
+      <div className="menu-grid">
+        {items.map((item) => (
+          <div className="menu-card" key={item.name}>
+            <img src={item.img} alt={item.name} />
+
+            <div className="menu-card-body">
+              <h3>{item.name}</h3>
+              <p className="menu-desc">{item.desc}</p>
+              <p className="menu-price">${item.price}</p>
+
+              <button className="menu-btn" onClick={() => addToCart(item)}>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Menu;
