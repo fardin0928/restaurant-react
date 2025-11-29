@@ -9,38 +9,38 @@ const Menu = () => {
       name: "Classic Burger",
       desc: "Beef patty, cheddar cheese, house sauce",
       price: 8.99,
-      img: "/assets/burger.webp"
+      img: process.env.PUBLIC_URL + "/assets/burger.webp"
     },
     {
       name: "Cheese Fries",
       desc: "Crispy fries topped with cheddar & jalapeño",
       price: 4.99,
-      img: "/assets/fries.jpg"
+      img: process.env.PUBLIC_URL + "/assets/fries.jpg"
     },
     {
       name: "Buffalo Wings",
       desc: "6pc wings served with ranch & celery",
       price: 7.49,
-      img: "/assets/wings.jpg"
+      img: process.env.PUBLIC_URL + "/assets/wings.jpg"
     },
     {
       name: "Chicken Sandwich",
       desc: "Crispy buttermilk chicken, lettuce, tomato",
       price: 9.49,
-      img: "/assets/chicken-sandwich.webp"
+      img: process.env.PUBLIC_URL + "/assets/chicken-sandwich.webp"
     },
     {
       name: "Vanilla Shake",
       desc: "Thick & creamy vanilla ice cream blend",
       price: 5.99,
-      img: "/assets/shake.jpg"
+      img: process.env.PUBLIC_URL + "/assets/shake.jpg"
     },
     {
       name: "Garden Salad",
       desc: "Fresh greens, tomato, cucumber, vinaigrette",
       price: 6.99,
-      img: "/assets/salad.jpg"
-    },
+      img: process.env.PUBLIC_URL + "/assets/salad.jpg"
+    }
   ];
 
   return (
@@ -53,7 +53,7 @@ const Menu = () => {
       <div className="menu-grid">
         {items.map((item) => (
           <div className="menu-card" key={item.name}>
-            <img src={item.img} alt={item.name} />
+            <img src={item.img} alt={item.name} className="menu-img" />
 
             <div className="menu-card-body">
               <h3>{item.name}</h3>

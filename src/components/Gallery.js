@@ -2,12 +2,12 @@ import React from "react";
 import "./Gallery.css";
 
 const images = [
-  "/assets/wings.jpg",
-  "/assets/chicken-sandwich.webp",
-  "/assets/burger.webp",
-  "/assets/fries.jpg",
-  "/assets/salad.jpg",
-  "/assets/shake.jpg"
+  process.env.PUBLIC_URL + "/assets/wings.jpg",
+  process.env.PUBLIC_URL + "/assets/chicken-sandwich.webp",
+  process.env.PUBLIC_URL + "/assets/burger.webp",
+  process.env.PUBLIC_URL + "/assets/fries.jpg",
+  process.env.PUBLIC_URL + "/assets/salad.jpg",
+  process.env.PUBLIC_URL + "/assets/shake.jpg"
 ];
 
 function Gallery() {
@@ -32,7 +32,7 @@ function Gallery() {
         ))}
       </div>
 
-      {/* FOOTER */}
+      {/* FOOTER  */}
       <footer className="footer-gallery">
         <p>© Your Restaurant</p>
         <p>
