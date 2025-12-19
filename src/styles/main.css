@@ -321,3 +321,27 @@ footer span {
   transform: scale(1.15);
   background-color: #2ecc71;
 }
+/* -----------------------------------------------------------
+   RESPONSIVE FIXES (MOBILE)
+----------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-card {
+    width: 100%;
+  }
+
+  .menu-card img {
+    height: 220px;
+  }
+}
