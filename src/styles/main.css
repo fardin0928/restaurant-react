@@ -312,3 +312,12 @@ footer span {
   color: #d4af37;
   font-weight: bold;
 }
+/* ADD TO CART FEEDBACK */
+.menu-btn {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.menu-btn.added {
+  transform: scale(1.15);
+  background-color: #2ecc71;
+}

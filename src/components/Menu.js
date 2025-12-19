@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "../content/CartContext";
 
 const Menu = () => {
   const { addToCart } = useContext(CartContext);
+  const [addedItem, setAddedItem] = useState(null);
 
   const items = [
     {
@@ -43,6 +44,12 @@ const Menu = () => {
     }
   ];
 
+  const handleAdd = (item) => {
+    addToCart(item);
+    setAddedItem(item.name);
+    setTimeout(() => setAddedItem(null), 300);
+  };
+
   return (
     <div className="menu-page container">
       <h2 className="menu-title">Menu</h2>
@@ -60,7 +67,10 @@ const Menu = () => {
               <p className="menu-desc">{item.desc}</p>
               <p className="menu-price">${item.price}</p>
 
-              <button className="menu-btn" onClick={() => addToCart(item)}>
+              <button
+                className={`menu-btn ${addedItem === item.name ? "added" : ""}`}
+                onClick={() => handleAdd(item)}
+              >
                 Add to Cart
               </button>
             </div>
